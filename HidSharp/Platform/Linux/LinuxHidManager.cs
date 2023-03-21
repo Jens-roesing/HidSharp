@@ -20,6 +20,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Threading;
 
 namespace HidSharp.Platform.Linux
 {
@@ -76,6 +77,10 @@ namespace HidSharp.Platform.Linux
                                     DeviceList.Local.RaiseChanged();
                                 }
                             }
+                        }
+                        if (ret == 0)
+                        {
+                            Thread.Sleep(100);
                         }
                     }
                 }
