@@ -77,8 +77,12 @@ namespace HidSharp.Platform.Linux
                                     DeviceList.Local.RaiseChanged();
                                 }
                             }
+                            else
+                            {
+                                Thread.Sleep(100);
+                            }
                         }
-                        if (ret == 0)
+                        else
                         {
                             Thread.Sleep(100);
                         }
