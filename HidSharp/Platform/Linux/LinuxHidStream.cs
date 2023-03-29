@@ -39,8 +39,8 @@ namespace HidSharp.Platform.Linux
 			_inputQueue = new Queue<byte[]>();
 			_outputQueue = new Queue<CommonOutputReport>();
 			_handle = -1;
-            _readThread = new Thread(ReadThread) { IsBackground = true, Name = "HID Reader" };
-            _writeThread = new Thread(WriteThread) { IsBackground = true, Name = "HID Writer" };
+            _readThread = new Thread(ReadThread) { IsBackground = true, Name = "HID Reader", Priority = ThreadPriority.Highest };
+            _writeThread = new Thread(WriteThread) { IsBackground = true, Name = "HID Writer", Priority = ThreadPriority.Highest };
         }
 		
 		internal static int DeviceHandleFromPath(string path, HidDevice hidDevice, NativeMethods.oflag oflag)
