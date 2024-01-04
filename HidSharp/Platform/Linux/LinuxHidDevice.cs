@@ -89,7 +89,7 @@ namespace HidSharp.Platform.Linux
                         }
                         finally
                         {
-                            NativeMethodsLibudev.Instance.udev_device_unref(device);
+                            //NativeMethodsLibudev.Instance.udev_device_unref(device);
                         }
                     }
                 }
